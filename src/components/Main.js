@@ -3,6 +3,7 @@
 
 import { useEffect, useState } from "react"
 import NewsCard from "./NewsCard"
+import CatNav from "./CatNav"
 
 export default function Main(){
   //Lager states
@@ -45,21 +46,10 @@ export default function Main(){
     setFilter("All")
   }
 
-  function CatNav(){
-    return(
-      <ul>
-        {navCat.map((item, index) => (
-          <li key={index}><button onClick={handleFilter}>{item}</button></li>
-        ))}
-        <li><button onClick={handleReset}>Alle nyheter</button></li>
-      </ul>
-    )
-  }
-
   return(
     <>
       <h2>Her kommer nyheter</h2>
-      <CatNav/>
+      <CatNav navCat={navCat} handleFilter={handleFilter} handleReset={handleReset}/>
       {/* 
         Mapper igjennom elementet news, får vist frem bilder tittler osv
       */}

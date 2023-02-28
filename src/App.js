@@ -1,25 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
 
+//Importerer fra components mappen
+import Main from './components/Main';
+import Layout from './components/Layout';
+import NewsCard from './components/NewsCard';
+
+//API key
+//6f766ef872374052a5bbf58aea921cfb
+
+//<Main> blir lagt som et barnelement til <Layout>
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Layout>
+      <Main />
+    </Layout>
+  )
 }
 
 export default App;
